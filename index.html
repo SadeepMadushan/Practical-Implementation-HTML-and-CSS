@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage Prototype</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
 </head>
 <body>
     <header>
@@ -20,7 +17,7 @@
     </header>
 
     <section id="hero" class="hero">
-        <p>Strategic IT solutions & outsourcing, privacy & data protection</p>
+        <p>Strategic IT solutions &amp; outsourcing, privacy &amp; data protection</p>
         <h1 class="stacked-heading">
             <span>Innovations that</span>
             <span>move your</span>
@@ -37,7 +34,7 @@
     <div class="image-container">
         <img src="https://www.twire.se/wp-content/uploads/2019/06/Twire-38-of-141.jpg" alt="Twire Office" class="background-image">
         <div class="overlay">
-            <h2>We create strategies, <br>innovation & growth.</h2>
+            <h2>We create strategies, <br>innovation &amp; growth.</h2>
             <p>
                 <span>Twire is a consultancy firm focused on strategic IT and software</span>
                 <span>development connecting top expertise with clients worldwide.</span>
@@ -58,7 +55,8 @@
             <!-- Slide 1 -->
             <div class="slide">
                 <div class="text">
-                    <p>We’re thrilled to have Twire, Sri Lanka, as one of our main development centers, and we’re excited to see where it takes us. We believe in collaboration, diverse set of skills and backgrounds for innovative solutions thereof. Therefore, Twire with its Manager and team have the right mindset and expertise for us.</p>
+                    
+                    <p>We’re thrilled to have Twire, Sri Lanka, as one of our main development centers, and we’re excited to see where it takes us. We believe in collaboration, diverse set of skills and backgrounds for innovative solutions thereof. Therefor, Twire with its Manager and team have the right mindset and expertise for us.</p>
                     <p>--- JONAS INGHAMMER, EFFECTSOFT </p>
                 </div>
                 <div class="image">
@@ -69,6 +67,7 @@
             <!-- Slide 2 -->
             <div class="slide">
                 <div class="text">
+                    
                     <p>Our goal at Minkalender has always been to make our products user friendly and efficient for our customers. One of the ways we’re accomplishing this is through our business relationship with Twire.</p>
                 <p>---FREDRIC JHONSON</p>
                 </div>
@@ -80,6 +79,7 @@
             <!-- Slide 3 -->
             <div class="slide">
                 <div class="text">
+                    
                     <p> There are many companies out there working within the IT-industry, and then there is Twire, able to offer the support and reliability of a traditional consultancy firm with the low cost of an outsourcing company with the broadness and flexibility of a well-grounded business that also emphasise on integrity and data protection with right expertise. By far one of the best companies I have experienced. </p>
                    <p>--- SEBASTIAN EIGH, SLIDECTURE</p>
                 </div>
@@ -97,47 +97,77 @@
         </div>
     </div>
 
-    <section class="logo-grid-container">
-        <h1>Our Trusted Partners</h1>
-        <div class="logo-grid">
-            <!-- Logo images -->
-            <div class="logo-row">
-                <img src="https://www.twire.se/wp-content/uploads/2019/06/AcquestLogo.png" alt="Company 1" class="logo">
-                <img src="https://www.twire.se/wp-content/uploads/2019/06/Svenskl%C3%A5nef%C3%B6rmedlinglogo.png" alt="Company 2" class="logo">
-                <img src="https://www.twire.se/wp-content/uploads/2019/06/EffectSoft-Logo-e1561097466118.png" alt="Company 3" class="logo">
-                <img src="https://www.twire.se/wp-content/uploads/2019/06/MinKalenderLogo-e1561097499966.png" alt="Company 4" class="logo">
-            </div>
-            <div class="logo-row">
-                <img src="https://www.twire.se/wp-content/uploads/2019/06/micropol.png" alt="Company 5" class="logo">
-                <img src="https://www.twire.se/wp-content/uploads/2019/06/Glitteray.png" alt="Company 6" class="logo">
-                <img src="https://www.twire.se/wp-content/uploads/2019/06/appspotr.png" alt="Company 7" class="logo">
-                <img src="https://www.twire.se/wp-content/uploads/2019/06/STORADIO_2_RGB.png" alt="Company 8" class="logo">
-            </div>
-            <div class="logo-row">
-                <img src="https://www.twire.se/wp-content/uploads/2019/06/esmokes-logo-e1561098728826.png" alt="Company 9" class="logo">
-                <img src="https://www.twire.se/wp-content/uploads/2019/06/adme_logo_black.png" alt="Company 10" class="logo">
-                <img src="https://www.twire.se/wp-content/uploads/2019/06/logo-e1561099119307.png" alt="Company 11" class="logo">
-                <img src="https://www.twire.se/wp-content/uploads/2019/06/themobilestore.png" alt="Company 12" class="logo">
-            </div>
-        </div>
-    </section>
+    <script>
+        const slides = document.getElementById('slides');
+        const dots = document.querySelectorAll('.dot');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const totalSlides = slides.children.length;
+            currentIndex = (index + totalSlides) % totalSlides;
+            slides.style.transform = translateX(-${currentIndex * 100}%);
+
+            // Update dots
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentIndex].classList.add('active');
+        }
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const index = parseInt(dot.getAttribute('data-index'));
+                showSlide(index);
+            });
+        });
+
+        
+        setInterval(() => {
+            showSlide(currentIndex + 1);
+        }, 5000);
+
+    </script>
+<section class="logo-grid-container">
+    <h1>Our Trusted Partners</h1>
+    <div class="logo-grid">
+      <!-- Logo images -->
+      <div class="logo-row">
+        <img src="https://www.twire.se/wp-content/uploads/2019/06/AcquestLogo.png" alt="Company 1" class="logo">
+        <img src="https://www.twire.se/wp-content/uploads/2019/06/Svenskl%C3%A5nef%C3%B6rmedlinglogo.png" alt="Company 2" class="logo">
+        <img src="https://www.twire.se/wp-content/uploads/2019/06/EffectSoft-Logo-e1561097466118.png" alt="Company 3" class="logo">
+        <img src="https://www.twire.se/wp-content/uploads/2019/06/MinKalenderLogo-e1561097499966.png" alt="Company 4" class="logo">
+      </div>
+      <div class="logo-row">
+        <img src="https://www.twire.se/wp-content/uploads/2019/06/micropol.png" alt="Company 5" class="logo">
+        <img src="https://www.twire.se/wp-content/uploads/2019/06/Glitteray.png" alt="Company 6" class="logo">
+        <img src="https://www.twire.se/wp-content/uploads/2019/06/appspotr.png" alt="Company 7" class="logo">
+        <img src="https://www.twire.se/wp-content/uploads/2019/06/STORADIO_2_RGB.png" alt="Company 8" class="logo">
+      </div>
+      <div class="logo-row">
+        <img src="https://www.twire.se/wp-content/uploads/2019/06/esmokes-logo-e1561098728826.png" alt="Company 9" class="logo">
+        <img src="https://www.twire.se/wp-content/uploads/2019/06/adme_logo_black.png" alt="Company 10" class="logo">
+        <img src="https://www.twire.se/wp-content/uploads/2019/06/logo-e1561099119307.png" alt="Company 11" class="logo">
+        <img src="https://www.twire.se/wp-content/uploads/2019/06/themobilestore.png" alt="Company 12" class="logo">
+      </div>
+    </div>
+  </section>
   
-    <footer class="footer">
-        <p>© 2025 Twire. All Rights Reserved.</p>
-        <div class="social-icons">
-            <a href="#" target="_blank" title="Facebook">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" target="_blank" title="Twitter">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" target="_blank" title="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="#" target="_blank" title="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-        </div>
-    </footer>
-</body>
-</html>
+  <footer class="footer">
+    <p>© 2025 Twire. All Rights Reserved.</p>
+    <div class="social-icons">
+      <a href="#" target="_blank" title="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" target="_blank" title="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="#" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </footer>
+  
+
+
+ </body></html>
