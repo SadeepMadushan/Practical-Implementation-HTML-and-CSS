@@ -1,10 +1,11 @@
 <html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Homepage Prototype</title>
+    
 </head>
-<body>
-    <header>
+<body> <header>
         <div class="logo">TWiRE</div>
         <nav>
             <ul>
@@ -105,9 +106,7 @@
         function showSlide(index) {
             const totalSlides = slides.children.length;
             currentIndex = (index + totalSlides) % totalSlides;
-            slides.style.transform = translateX(-${currentIndex * 100}%);
-
-            // Update dots
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
             dots.forEach(dot => dot.classList.remove('active'));
             dots[currentIndex].classList.add('active');
         }
@@ -119,7 +118,6 @@
             });
         });
 
-        
         setInterval(() => {
             showSlide(currentIndex + 1);
         }, 5000);
@@ -128,9 +126,11 @@
 <section class="logo-grid-container">
     <h1>Our Trusted Partners</h1>
     <div class="logo-grid">
+
+
       <!-- Logo images -->
       <div class="logo-row">
-        <img src="https://www.twire.se/wp-content/uploads/2019/06/AcquestLogo.png" alt="Company 1" class="logo">
+        <img src="https://www.acquest.lk/wp-content/uploads/2021/01/Acquest-logo-01-1-scaled.jpg" alt="Company 1" class="logo">
         <img src="https://www.twire.se/wp-content/uploads/2019/06/Svenskl%C3%A5nef%C3%B6rmedlinglogo.png" alt="Company 2" class="logo">
         <img src="https://www.twire.se/wp-content/uploads/2019/06/EffectSoft-Logo-e1561097466118.png" alt="Company 3" class="logo">
         <img src="https://www.twire.se/wp-content/uploads/2019/06/MinKalenderLogo-e1561097499966.png" alt="Company 4" class="logo">
